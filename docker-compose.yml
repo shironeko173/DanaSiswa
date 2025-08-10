@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: danasiswa_app
+    ports: ["8005:8000"]
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: dana_siswa_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dana_siswa
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    ports: ["3311:3306"]
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dana_siswa
+    depends_on:
+      - db
+    ports:
+      - "8085:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: laravel
+      PMA_PASSWORD: secret
+      UPLOAD_LIMIT: 128M
+
+volumes:
+  db_data:
