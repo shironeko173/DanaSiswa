@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('SuperAdmin', function(User $user) {
             return $user->role === 'SuperAdmin';
         });
+
+        if(env('APP_ENV') === 'production') {
+        // URL::forceScheme('https');
+        URL::forceRootUrl(config('app.url'));
+        }
     }
 }
