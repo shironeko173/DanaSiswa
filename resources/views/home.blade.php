@@ -262,7 +262,7 @@
                 <span>211402029</span>
                 <div class="social">
                   <a href="https://www.instagram.com/m.fahru_i7/"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/fahru-rozi-582372180"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-fahru-rozi/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
