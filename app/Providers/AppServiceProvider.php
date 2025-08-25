@@ -33,9 +33,13 @@ class AppServiceProvider extends ServiceProvider
             return $user->role === 'SuperAdmin';
         });
 
-        if(env('APP_ENV') === 'production') {
-        // URL::forceScheme('https');
-        URL::forceRootUrl(config('app.url'));
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+            
+            // Juga force HTTPS untuk request
+            if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+                $_SERVER['HTTPS'] = 'on';
+            }
         }
     }
 }
