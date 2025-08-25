@@ -81,7 +81,7 @@ class DepositController extends Controller
         ]); 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['jmlh_deposit'] = $request->jmlh_deposit;
-        $validatedData['buktitf'] = $request->file('buktitf')->store('deposit');
+        $validatedData['buktitf'] = $request->file('buktitf')->store('deposit', 'public');
 
         Deposit::create($validatedData);
         // Alert::success('Success', 'Success!! Deposit anda berhasil diajukan')->autoClose(4000);
