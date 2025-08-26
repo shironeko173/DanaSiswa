@@ -109,7 +109,6 @@ class DashboardPostController extends Controller
             'body' => 'required',
             'image' => 'image|file|max:3072'
         ]);
-
         if($request->file('image')){
             Storage::delete($request->oldImage);
             $validatedData['image'] = $request->file('image')->store('post-cover-images', 'public');

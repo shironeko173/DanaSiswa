@@ -192,7 +192,7 @@
                 <div class="mt-3">
                   @foreach ($postsbaru as $new)
                   <div class="post-item mt-3">
-                    <img src="{{ asset('uploads/' . $new->image) }}" alt="" class="flex-shrink-0">
+                    <img src="{{ asset('storage/' . $new->image) }}" alt="" class="flex-shrink-0">
                     <div>
                       <h4><a href="/blog/{{ $new->slug }}">{{ $new->title }}</a></h4>
                       <time>

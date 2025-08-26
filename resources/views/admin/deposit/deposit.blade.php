@@ -62,7 +62,7 @@
                   <td>{{ $depo->user->nis }}</td>
                   <td>{{ $depo->jmlh_deposit }}</td>
                   <td>
-                    <img src=" {{ asset('uploads/' . $depo->buktitf) }}" class="img-preview" width="100px" height="100px">
+                    <img src=" {{ asset('storage/' . $depo->buktitf) }}" class="img-preview" width="100px" height="100px">
                   </td>
                   <td>{{ $depo->status }}</td>
                 </tr>
