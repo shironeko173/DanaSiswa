@@ -35,7 +35,7 @@
     <div class="row">
         
       <div class="col-10 ">
-        <img src="{{asset('uploads/'.$post->image)}}" class="product-image p-2">
+        <img src="{{ asset('storage/' . $post->image) }}" class="product-image p-2">
     
         <ul class="list-group list-group-horizontal p-3 ">
           <li class="list-group-item"><i class="fa-solid fa-user p-1"></i>{{$post->user->nama}}</li>

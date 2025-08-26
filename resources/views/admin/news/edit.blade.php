@@ -61,7 +61,7 @@
                     <div class="mb-3">
                       <label for="image" class="form-label">Gambar Sampul Berita</label>
                       <input type="hidden" name="oldImage" value="{{$post->image}}">
-                      <img src="{{asset('uploads/'.$post->image)}}" class="img-preview img-fluid mb-3 mt-2 col-sm-6 d-block">
+                      <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 mt-2 col-sm-6 d-block">
                       <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
                       @error('image')
                       <div class="invalid-feedback">

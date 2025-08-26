@@ -133,7 +133,7 @@
                 <article class="d-flex flex-column">
 
                   <div class="post-img">
-                    <img src="{{ asset('uploads/' . $post->image) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="" class="img-fluid">
                   </div>
 
                   <h2 class="title">
