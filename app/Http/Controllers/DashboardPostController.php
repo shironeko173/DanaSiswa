@@ -52,6 +52,7 @@ class DashboardPostController extends Controller
             'image' => 'required|image|file|max:3072'
         ]);
 
+        // agar storage di simpan di public
         $path = $request->file('image')->store('post-cover-images', 'public');
         $validatedData['image'] = $path;
         $validatedData['user_id'] = auth()->user()->id;
