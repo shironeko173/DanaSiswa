@@ -18,7 +18,7 @@ class PostsController extends Controller
             'postsbaru' => Post::orderBy('created_at', 'DESC')->limit('5')->get(),
         ]);
     }
- 
+  
     public function show(Post $post)
     {
         return view('posts.detail',[

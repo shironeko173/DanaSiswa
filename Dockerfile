@@ -70,6 +70,7 @@ WORKDIR /var/www/html
 # clear + rebuild cache
 RUN php artisan config:clear \
     && php artisan route:clear \
+    && php artisan storage:link \
     && php artisan view:clear \
     && php artisan cache:clear \
     && php artisan config:cache \

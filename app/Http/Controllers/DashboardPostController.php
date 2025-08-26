@@ -52,7 +52,8 @@ class DashboardPostController extends Controller
             'image' => 'required|image|file|max:3072'
         ]);
 
-        $validatedData['image'] = $request->file('image')->store('post-cover-images', 'public');
+        $path = $request->file('image')->store('post-cover-images', 'public');
+        $validatedData['image'] = $path;
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 150);
         $validatedData['slug'] = Str::slug($request->title,'-');
